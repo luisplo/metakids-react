@@ -1,10 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import GuestLayout from './layouts/GuestLayout.jsx'
+import Activity from './pages/Activity.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <GuestLayout>
+      <Activity />
+    </GuestLayout>
   </StrictMode>,
 )
