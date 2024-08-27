@@ -9,7 +9,7 @@ export default function GuestLayout({ children }) {
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
                     <Navbar />
-                    <div className="container p-10">
+                    <div className="container mx-auto">
                         {children}
                     </div>
                 </div>
