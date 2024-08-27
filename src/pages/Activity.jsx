@@ -4,7 +4,7 @@ import Table from "../components/Table";
 export default function Activity() {
     return (
         <>
-            <h1 className="text-3xl text-left">Actividades</h1>
+            <h1 className="text-4xl text-left font-semibold">Actividades</h1>
             <p className="mt-5 mb-10">
                 Cillum officia cupidatat culpa labore sint Lorem eu id. Sit anim officia exercitation non anim consequat. Eiusmod voluptate anim commodo eiusmod pariatur aliquip voluptate voluptate ea sunt incididunt non Lorem exercitation.
             </p>

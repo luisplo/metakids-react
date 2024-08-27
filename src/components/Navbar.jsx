@@ -1,6 +1,6 @@
 export default function Navbar() {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 shadow-md mb-20">
             <div className="flex-none">
                 <label
                     htmlFor="my-drawer"
