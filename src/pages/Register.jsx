@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase'
 import { toast } from "react-toastify";
 
-export default function LogUp() {
+export default function Register() {
     const dispatch = useAuthDispatch()
     const navigate = useNavigate()
 

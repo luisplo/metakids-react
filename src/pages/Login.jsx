@@ -50,7 +50,7 @@ export default function Login() {
                         <input type="password" className="grow" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} />
                     </label>
                     <p>
-                        ¿Todavía no estás registrado? <Link className="font-bold" to={`/sign/up`}>Hazlo aquí.</Link>
+                        ¿Todavía no estás registrado? <Link className="font-bold" to={`/register`}>Hazlo aquí.</Link>
                     </p>
                     <div className="card-actions justify-end">
                         <button className="btn btn-primary" onClick={handleOnSubmit}>Sign In</button>

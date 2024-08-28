@@ -6,11 +6,12 @@ import { useEffect } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from '../../firebase'
 import { toast } from "react-toastify";
-import { useAuthDispatch } from "../context/AuthContext";
+import { useAuth, useAuthDispatch } from "../context/AuthContext";
 
 export default function AuthLayout() {
     const navigate = useNavigate()
     const dispatch = useAuthDispatch()
+    const user = useAuth()
 
     function exit() {
         signOut(auth)
@@ -18,7 +19,7 @@ export default function AuthLayout() {
                 dispatch({
                     type: 'signout',
                 })
-                navigate("/sign/in")
+                navigate("/auth/login")
             })
             .catch(error => {
                 toast.error('Ha ocurrido un error, ' + error.code)
@@ -26,17 +27,18 @@ export default function AuthLayout() {
     }
 
     useEffect(() => {
-        onAuthStateChanged(auth, user => {
-            if (user) {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            if (currentUser) {
                 dispatch({
                     type: 'signin',
-                    user: user,
+                    user: currentUser,
                     auth: true
                 })
             } else {
                 exit()
             }
         })
+        return () => unsubscribe();
     }, [])
 
     return (
@@ -45,7 +47,9 @@ export default function AuthLayout() {
             <div className="drawer-content">
                 <Navbar />
                 <div className="container mx-5 md:mx-auto">
-                    <Outlet />
+                    {user.auth &&
+                        <Outlet />
+                    }
                 </div>
             </div>
             <Drawer />
