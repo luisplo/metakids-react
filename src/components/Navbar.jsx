@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
     return (
         <div className="navbar bg-base-100 shadow-md mb-20">
@@ -19,7 +21,7 @@ export default function Navbar() {
                 </label>
             </div>
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Metakids</a>
+                <Link className="btn btn-ghost text-xl" to={`/`}>Metakids</Link>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
